@@ -5,27 +5,25 @@ header {
   background-image: url('/assets/images/balls.svg');
   background-repeat: no-repeat;
   background-position: center top;
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 70%;
+    margin: 0 auto;
+  }
 }
 
-header nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 70%;
-  margin: 0 auto;
-}
-
-header nav .navbar {
+.navbar {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  .nav-item {
+    padding: 1.625rem 0;
+    .nav-link {
+      color: $white;
+      font: 700 1.25rem 'Poppins', sans-serif;
+    }
+  }
 }
 
-.navbar .nav-item {
-  padding: 1.625rem 0;
-}
-
-.navbar .nav-item .nav-link {
-  color: $white;
-  font: 700 1.25rem 'Poppins', sans-serif;
-}

@@ -1,21 +1,19 @@
-import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, FormGroupDirective, Validators } from '@angular/forms';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-shortener',
   templateUrl: './shortener.component.html',
   styleUrls: ['./shortener.component.scss']
 })
-export class ShortenerComponent implements OnInit {
+export class ShortenerComponent {
   /* FIXME: Arrumar nome das variaveis após fazer backend */
+  @ViewChild('shortenedUrl') shortenedUrl!: any;
   qrcodeForm!: FormGroup;
   url!: string;
-  @ViewChild('shortenedUrl') shortenedUrl!: any;
+  showComponent!: Boolean;
 
   constructor(private fb: FormBuilder) {
-  }
-  
-  ngOnInit(): void {
     this.qrcodeForm = this.fb.group({
       url: [null, Validators.required],
     });
@@ -25,6 +23,7 @@ export class ShortenerComponent implements OnInit {
   onSubmit(): void {
     const newQrcode = this.qrcodeForm.getRawValue();
     this.url = newQrcode.url;
+    this.showComponent = true;
   }
 
 }
