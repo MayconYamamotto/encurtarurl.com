@@ -1,0 +1,10 @@
+<main>
+  <form [formGroup]="qrcodeForm" (ngSubmit)="onSubmit()" #form="ngForm">
+    <div class='input-group'>
+      <input type='text' class='form-control' placeholder='Cole seu link aqui...' formControlName="url">
+      <button type='submit' class='btn'>Converter</button>
+    </div>
+  </form>
+  <!-- TODO: Aparecer o componente apenas quando der submit no formulário -->
+  <app-shortened-url #shortenedUrl [url]='url'></app-shortened-url>
+</main>

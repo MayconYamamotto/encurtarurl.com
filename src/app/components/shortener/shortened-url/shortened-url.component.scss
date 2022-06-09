@@ -1,0 +1,42 @@
+@import 'styles';
+
+.qrcodeImage {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.shortened-url {
+  display: grid;
+  grid-template-columns: 0.3fr;
+  justify-content: center;
+  gap: 1.25rem;
+  margin-top: 3.125rem;
+} 
+
+.input-group {
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+
+.form-control {
+  background: $background;
+  border: 0;
+  border-radius: 0.5rem 0 0 0.5rem;
+  padding: 0.625rem 1rem;
+  text-align: center;
+  font: 400 1rem 'Poppins', sans-serif;
+  cursor: pointer;
+}
+
+.btn {
+  align-items: center;
+  display: inline-flex;
+  color: $white;
+  cursor: pointer;
+  background: $blue;
+  border: 1px solid $blue;
+  border-radius: 0 0.5rem 0.5rem 0;
+  padding: 0.625rem;
+  font: 700 1rem 'Poppins', sans-serif;
+}

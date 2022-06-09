@@ -1,0 +1,31 @@
+@import 'styles';
+
+header {
+  background: $blue;
+  background-image: url('/assets/images/balls.svg');
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 70%;
+  margin: 0 auto;
+}
+
+header nav .navbar {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.navbar .nav-item {
+  padding: 1.625rem 0;
+}
+
+.navbar .nav-item .nav-link {
+  color: $white;
+  font: 700 1.25rem 'Poppins', sans-serif;
+}

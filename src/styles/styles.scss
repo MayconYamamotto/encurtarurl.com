@@ -1,0 +1,12 @@
+@import './variables.scss';
+
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+
+body {
+  background: $background;
+  height: 100vh;
+}

@@ -1,0 +1,38 @@
+@import 'styles';
+
+main {
+  max-width: 70%;
+  margin: 0 auto;
+  padding: 3.125rem;
+  border-radius: 1rem;
+  background: $white;
+}
+
+form .input-group {
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+
+form .form-control {
+  background: $background;
+  border: 1px solid $blue;
+  border-radius: 0.5rem 0 0 0.5rem;
+  padding: 1.25rem;
+  font: 400 1rem 'Poppins', sans-serif;
+}
+
+form .btn {
+  display: block;
+  width: fit-content;
+  color: $white;
+  cursor: pointer;
+  background: $blue;
+  border: 1px solid $blue;
+  border-radius: 0 0.5rem 0.5rem 0;
+  padding: 1.25rem;
+  font: 700 1rem 'Poppins', sans-serif;
+}
+
+.hidden {
+  display: none;
+}
