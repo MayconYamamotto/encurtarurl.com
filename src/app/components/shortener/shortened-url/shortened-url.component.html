@@ -2,13 +2,13 @@
 <div class='shortened-url'>
   <div class='qrcodeImage'>
     <!-- TODO: vir com qrcode com link encurtado -->
-    <qrcode #qrCode [qrdata]="url ? url : 'Encurtarurl.com'" [imageSrc]='urlGenerate' [width]="150" [errorCorrectionLevel]="'M'"
+    <qrcode #qrCode [qrdata]="generatedUrl.url" [imageSrc]='generatedUrl.url' [width]="150" [errorCorrectionLevel]="'M'"
       colorLight='#F3F4F5' colorDark='#002233'></qrcode>
   </div>
 
-  <div class='input-group' (click)='copyUrl(url)'>
+  <div class='input-group' (click)='copyUrl(generatedUrl)'>
     <!-- TODO: vir com link encurtado -->
-    <input type='text' class='form-control' disabled [(ngModel)]="url">
+    <input type='text' class='form-control' disabled [(ngModel)]="generatedUrl.url">
     <button type='submit' class='btn'>
       <img src='/assets/images/copy.svg' alt='Copy URL'>
     </button>

@@ -6,5 +6,5 @@
     </div>
   </form>
   <!-- TODO: Aparecer o componente apenas quando der submit no formulário -->
-  <app-shortened-url #shortenedUrl [url]='url' *ngIf='showComponent'></app-shortened-url>
+  <app-shortened-url #shortenedUrl [generatedUrl]='url' *ngIf='showComponent'></app-shortened-url>
 </main>

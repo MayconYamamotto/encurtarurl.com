@@ -1,5 +1,7 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Url } from 'src/app/models/url';
+import { ShortenerService } from 'src/app/services/shortener.service';
 
 @Component({
   selector: 'app-shortener',
@@ -9,11 +11,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class ShortenerComponent {
   /* FIXME: Arrumar nome das variaveis após fazer backend */
   @ViewChild('shortenedUrl') shortenedUrl!: any;
-  qrcodeForm!: FormGroup;
-  url!: string;
   showComponent!: Boolean;
+  qrcodeForm!: FormGroup;
+  url!: Url;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private readonly shortenerService: ShortenerService, private fb: FormBuilder) {
     this.qrcodeForm = this.fb.group({
       url: [null, Validators.required],
     });
@@ -22,8 +24,11 @@ export class ShortenerComponent {
   /* TODO: Fazer comunicação com backend */
   onSubmit(): void {
     const newQrcode = this.qrcodeForm.getRawValue();
-    this.url = newQrcode.url;
-    this.showComponent = true;
+
+    this.shortenerService.encurtarUrl(newQrcode).subscribe((it) => {
+      this.url = it;
+    });
+
   }
 
 }

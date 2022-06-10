@@ -8,6 +8,7 @@ import { ShortenerComponent } from './components/shortener/shortener.component';
 import { ShortenedUrlComponent } from './components/shortener/shortened-url/shortened-url.component';
 import { QRCodeModule } from 'angularx-qrcode';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    HttpClientModule,
     FormsModule,
     QRCodeModule,
   ],
